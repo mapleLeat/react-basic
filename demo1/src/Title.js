@@ -1,14 +1,8 @@
-import React, {
-	Component
-} from 'react';
+import React from 'react';
 
-export default class Title extends Component {
-	constructor(props){
-		super(props)
-	}
-	render() {
-		return (
-			<div>{this.props.name}</div>
-		);	
-	}
+const Title = (props) => {
+	return (
+		<div>{props.name}</div>
+	);	
 }
+export default Title

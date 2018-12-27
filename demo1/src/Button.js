@@ -1,16 +1,10 @@
-import React, {
-	Component
-} from 'react';
+import React from 'react';
 
-export default class Title extends Component {
-	constructor(props){
-		super(props)
-	}
-	render() {
-		return (
-			<div>
-				<input type="button" onClick={this.props.showContent} style={this.props.style} value="切换"/>
-			</div>
-		);	
-	}
+const Title = (props) => {
+	return (
+		<div>
+			<input type="button" onClick={props.showContent} style={props.style} value="切换"/>
+		</div>
+	);	
 }
+export default Title
