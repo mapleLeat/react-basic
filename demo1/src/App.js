@@ -1,12 +1,15 @@
 import React, {
   Component
 } from 'react';
+import {Provider} from 'react-redux';
+import store from './store'
+
 import logo from './logo.svg';
 import './App.css';
-import Title from './Title'
-import Input from './Input'
-import Button from './Button'
-import Delete from './Delete'
+import Title from './components/Title'
+import Input from './components/Input'
+import Button from './components/Button'
+import Delete from './components/Delete'
 
 class App extends Component {
   constructor(){
@@ -67,11 +70,13 @@ class App extends Component {
       )
     }
     return (
-      <div className="App">
-      <Button style={this.state.isShow ? butStyle:null} showContent={this.showContent.bind(this)}></Button>
-      <br/>
-        {persons}
-      </div>
+		<Provider store={store}>	
+			<div className="App">
+				<Button style={this.state.isShow ? butStyle:null} showContent={this.showContent.bind(this)}></Button>
+				<br/>
+				{persons}
+			</div>	
+	     </Provider>
     );
   }
 }
