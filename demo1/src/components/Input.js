@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {changePersons} from '../actions/personsAction'
+import {changeName} from '../actions/personsAction'
 
 class Input extends Component{
 	componentDidMount(){
@@ -15,4 +15,14 @@ class Input extends Component{
 		);	
 	}
 }
-export default connect(null, {changePersons})(Input) 
+
+Input.proptypes = {
+	changeName: PropTypes.func.isRequired,
+	persons: PropTypes.string.isRequired
+}
+
+const mapStateToProps = state => ({
+	persons: state.persons.items
+})
+
+export default connect(mapStateToProps, {changeName})(Input) 

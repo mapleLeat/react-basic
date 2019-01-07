@@ -1,10 +1,9 @@
 import {CHANGE_PERSONS} from './types'
 
-export function changePersons(){
-	console.log("changePersons");
-	return function (dispatch) {
-		dispatch({
-			type: CHANGE_PERSONS
-		})
-	}
+export const changeName = (e) => dispatch => {
+	console.log("changeName" + e.target.value);
+	dispatch({
+		type: CHANGE_PERSONS,
+		payload: e.target.value
+	})
 }

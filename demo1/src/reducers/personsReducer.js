@@ -9,7 +9,8 @@ export default function (state = initialState, action){
 	switch(action.type){
 		case CHANGE_PERSONS:
 			return {
-				...state
+				...state,
+				items: action.payload
 			}	
 		default:
 			return state;

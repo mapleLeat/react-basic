@@ -61,7 +61,7 @@ class App extends Component {
           this.state.persons.map((person, index) => {
             return <div  key={index}>
                 <Title name={person.name}></Title>
-                <Input name={person.name} changeName={(event) => this.changeName(event, index)} ></Input>
+                <Input ></Input>
                 <Delete deletePerson={(event) => this.deletePerson(event, index)} ></Delete>
               </div>
           })
