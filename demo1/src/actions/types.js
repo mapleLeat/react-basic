@@ -1,1 +1,2 @@
 export const CHANGE_PERSONS = "CHANGE_PERSONS";
+export const CHANGE_SHOW = "CHANGE_SHOW";

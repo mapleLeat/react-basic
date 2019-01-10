@@ -42,14 +42,14 @@ class Content extends Component {
       backgroundColor: "red"
     }
     let persons = null
-    if(true){
+    if(this.props.isShow){
       persons = (
         <div>
         {
           this.props.persons.map((person, index) => {
-            return <div  key={index}>
+            return <div key={index}>
                 <Title name={person.name}></Title>
-                <Input ></Input>
+                <Input key={index}></Input>
                 <Delete deletePerson={(event) => this.deletePerson(event, index)} ></Delete>
               </div>
           })
@@ -59,7 +59,8 @@ class Content extends Component {
     }
     return (
 		<div className="App">
-			<Button style={this.props.isShow ? butStyle:null} showContent={this.showContent.bind(this)}></Button>
+			{/*<Button style={this.props.isShow ? butStyle:null} showContent={this.showContent.bind(this)}></Button>*/}
+			<Button></Button>
 			<br/>
 			{persons}
 		</div>	
@@ -68,8 +69,8 @@ class Content extends Component {
 }
 
 const mapStateToProps = state => ({
-	persons: state.persons.persons,
-	isShow: state.persons.isShow
+	persons: state.person.persons,
+	isShow: state.person.isShow
 })
 
 export default connect(mapStateToProps)(Content)

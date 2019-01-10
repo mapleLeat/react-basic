@@ -1,3 +1,5 @@
+//无状态组件是否可以用
+//
 import React, {
   Component
 } from 'react';

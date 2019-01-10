@@ -10,7 +10,7 @@ class Input extends Component{
 	render(){
 		return (
 			<div>
-				<input type="text" onChange={this.props.changeName} defaultValue={this.props.name} />
+				<input type="text" onChange={(event) => this.props.changeName(event, this.props.index)} defaultValue={this.props.name} />
 			</div>
 		);	
 	}
@@ -22,7 +22,7 @@ Input.proptypes = {
 }
 
 const mapStateToProps = state => ({
-	persons: state.persons.items
+	persons: state.person.persons
 })
 
 export default connect(mapStateToProps, {changeName})(Input) 
