@@ -1,11 +1,11 @@
 import React, {
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {deletePerson} from '../actions/personsAction'
 
 export default class Delete extends Component {
-	constructor(props){
-		super(props)
-	}
 	render() {
 		return (
 			<div>
@@ -14,3 +14,10 @@ export default class Delete extends Component {
 		);	
 	}
 }
+
+const mapStateToProps = state => ({
+	
+})
+
+export default connect(mapStateToProps, {deletePerson})(Delete) 
+

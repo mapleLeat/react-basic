@@ -10,7 +10,7 @@ class Input extends Component{
 	render(){
 		return (
 			<div>
-				<input type="text" onChange={(event) => this.props.changeName(event, this.props.index)} defaultValue={this.props.name} />
+				<input type="text" aa={this.props.index} onChange={(event) => this.props.changeName(event, this.props.index)} defaultValue={this.props.name} />
 			</div>
 		);	
 	}

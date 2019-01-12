@@ -12,7 +12,7 @@ class Content extends Component {
     this.state = {
     }
   }
-  showContent = (e) => {
+  /*showContent = (e) => {
     this.setState({
       isShow: !this.state.isShow
     })
@@ -35,6 +35,22 @@ class Content extends Component {
     this.setState({
       persons: persons
     })
+  }*/
+
+  componentDidMount(){
+    console.log("componentDidMount");
+    console.log(this.props.person);
+  }
+  componentWillReceiveProps(nextProps){
+    console.log("componentWillReceiveProps");
+    console.log(nextProps.person);
+    let persons = this.props.persons;
+    let persion = {
+      ...persons[nextProps.person.index]
+    }
+    persion.name = nextProps.person.name;
+    persons[nextProps.person.index] = persion;
+
   }
   render() {
     let butStyle = {
@@ -49,8 +65,8 @@ class Content extends Component {
           this.props.persons.map((person, index) => {
             return <div key={index}>
                 <Title name={person.name}></Title>
-                <Input key={index}></Input>
-                <Delete deletePerson={(event) => this.deletePerson(event, index)} ></Delete>
+                <Input index={index}></Input>
+                <Delete index={index} ></Delete>
               </div>
           })
         }
@@ -70,7 +86,8 @@ class Content extends Component {
 
 const mapStateToProps = state => ({
 	persons: state.person.persons,
-	isShow: state.person.isShow
+	isShow: state.person.isShow,
+  person: state.person.person
 })
 
 export default connect(mapStateToProps)(Content)

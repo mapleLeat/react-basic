@@ -8,7 +8,8 @@ const initialState = {
         {name: "黄绯红", age: 45},
         {name: "黄种", age: 35}
       ],
-      isShow: false
+      isShow: false,
+      person: {}
 }
 export default function (state = initialState, action){
 	console.log("reducer");
@@ -16,7 +17,7 @@ export default function (state = initialState, action){
 		case CHANGE_PERSONS:
 			return {
 				...state,
-				persons: action.payload
+				person: action.payload
 			}	
 		case CHANGE_SHOW:
 			return {
