@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {deletePerson} from '../actions/personsAction'
 
-export default class Delete extends Component {
+class Delete extends Component {
 	render() {
 		return (
 			<div>
-				<input type="button" onClick={this.props.deletePerson} defaultValue="delete"/>
+				<input type="button" onClick={(event) => this.props.deletePerson(event, this.props.index)} defaultValue="delete"/>
 			</div>
 		);	
 	}

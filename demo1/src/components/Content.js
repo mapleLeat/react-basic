@@ -62,11 +62,11 @@ class Content extends Component {
       persons = (
         <div>
         {
-          this.props.persons.map((person, index) => {
-            return <div key={index}>
+          this.props.persons.map((person) => {
+            return <div key={person.index}>
                 <Title name={person.name}></Title>
-                <Input index={index}></Input>
-                <Delete index={index} ></Delete>
+                <Input index={person.index}></Input>
+                <Delete index={person.index} ></Delete>
               </div>
           })
         }
@@ -87,7 +87,7 @@ class Content extends Component {
 const mapStateToProps = state => ({
 	persons: state.person.persons,
 	isShow: state.person.isShow,
-  person: state.person.person
+  	person: state.person.person
 })
 
 export default connect(mapStateToProps)(Content)
