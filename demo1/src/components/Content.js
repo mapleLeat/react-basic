@@ -5,6 +5,7 @@ import Title from './Title'
 import Input from './Input'
 import Button from './Button'
 import Delete from './Delete'
+import {defaultPersons} from '../actions/personsAction'
 
 class Content extends Component {
   constructor(){
@@ -64,30 +65,31 @@ class Content extends Component {
         {
           this.props.persons.map((person) => {
             return <div key={person.index}>
-                <Title name={person.name}></Title>
-                <Input index={person.index}></Input>
-                <Delete index={person.index} ></Delete>
-              </div>
+              <Title name={person.name}></Title>
+              <Input index={person.index}></Input>
+              <Delete index={person.index} ></Delete>
+            </div> 
           })
         }
+          <button onClick={this.defaultPersons}>default</button> 
         </div>
-      )
+        )
     }
     return (
-		<div className="App">
-			{/*<Button style={this.props.isShow ? butStyle:null} showContent={this.showContent.bind(this)}></Button>*/}
-			<Button></Button>
-			<br/>
-			{persons}
-		</div>	
+      <div className="App">
+    {/*<Button style={this.props.isShow ? butStyle:null} showContent={this.showContent.bind(this)}></Button>*/}
+    <Button></Button>
+    <br/>
+    {persons}
+    </div>	
     );
   }
 }
 
 const mapStateToProps = state => ({
-	persons: state.person.persons,
+  persons: state.person.persons,
 	isShow: state.person.isShow,
-  	person: state.person.person
+ person: state.person.person
 })
 
 export default connect(mapStateToProps)(Content)

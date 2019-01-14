@@ -1,4 +1,4 @@
-import {CHANGE_PERSONS,CHANGE_SHOW,DELETE_PERSON} from './types'
+import {CHANGE_PERSONS,CHANGE_SHOW,DELETE_PERSON,DEFAULT_PERSONS} from './types'
 
 export const changeName = (e, index) => dispatch => {
 	console.log("changeName:" + index);
@@ -18,5 +18,11 @@ export const deletePerson = (e, index) => dispatch => {
 	dispatch({
 		type: DELETE_PERSON,
 		payload: index
+	})
+}
+
+export const defaultPersons = () => dispatch => {
+	dispatch({
+		type: DEFAULT_PERSONS
 	})
 }

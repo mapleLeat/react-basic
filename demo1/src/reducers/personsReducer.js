@@ -1,5 +1,5 @@
 //reducer的作用:返回新的状态
-import {CHANGE_PERSONS,CHANGE_SHOW,DELETE_PERSON} from '../actions/types'
+import {CHANGE_PERSONS,CHANGE_SHOW,DELETE_PERSON,DEFAULT_PERSONS} from '../actions/types'
 
 const initialState = {
       persons: [
@@ -29,6 +29,11 @@ export default function (state = initialState, action){
 				...state,
 				persons:  state.persons.filter(({ index }) => index !== action.payload)
 
+			}
+		case DEFAULT_PERSONS:
+			return {
+				...state,
+				persons: state.persons
 			}
 		default:
 			return state;
