@@ -16,7 +16,10 @@ class App extends Component {
     this.state = {
     }
   }
+  
   render() {
+    let aaa = "aaa";
+    console.log(aaa);
     return (
 		<Provider store={store}>	
 			<div className="App">
