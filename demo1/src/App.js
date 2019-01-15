@@ -18,8 +18,6 @@ class App extends Component {
   }
   
   render() {
-    let aaa = "aaa";
-    console.log(aaa);
     return (
 		<Provider store={store}>	
 			<div className="App">
