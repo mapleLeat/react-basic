@@ -44,13 +44,6 @@ class Content extends Component {
   }
   componentWillReceiveProps(nextProps){
     console.log("componentWillReceiveProps");
-    console.log(nextProps.person);
-    let persons = this.props.persons;
-    let persion = {
-      ...persons[nextProps.person.index]
-    }
-    persion.name = nextProps.person.name;
-    persons[nextProps.person.index] = persion;
 
   }
   render() {
@@ -88,8 +81,7 @@ class Content extends Component {
 
 const mapStateToProps = state => ({
   persons: state.person.persons,
-	isShow: state.person.isShow,
- person: state.person.person
+	isShow: state.person.isShow
 })
 
 export default connect(mapStateToProps)(Content)

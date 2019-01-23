@@ -12,12 +12,16 @@ const initialState = {
       person: {}
 }
 export default function (state = initialState, action){
-	console.log("reducer");
 	switch(action.type){
 		case CHANGE_PERSONS:
 			return {
 				...state,
-				person: action.payload
+				persons: state.persons.map(element => {
+					if(element.index === action.payload.index){
+						element.name = action.payload.name;
+					}
+					return element;
+				})
 			}	
 		case CHANGE_SHOW:
 			return {
